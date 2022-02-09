@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { GenresDropdown } from './components/GenresDropdown'
 import { fetchGenres } from './store/movies/thunks/fetchGenres'
 
 export const App: FunctionComponent = () => {
@@ -10,6 +11,9 @@ export const App: FunctionComponent = () => {
   })
 
   return (
-    <h1 className='font-bold text-5xl text-red-300 ml-[-10px]'>Hello world!</h1>
+    <div className='flex flex-col'>
+      <h1 className='ml-8 text-5xl font-bold text-red-300'>My Movies</h1>
+      <GenresDropdown />
+    </div>
   )
 }
