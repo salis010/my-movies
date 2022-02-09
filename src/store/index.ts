@@ -1,5 +1,5 @@
 import { configureStore, EnhancedStore } from '@reduxjs/toolkit'
-import { movies, moviesInitialState, IMovies } from './movies-slice'
+import { movies, moviesInitialState, IMovies } from './movies/movies-slice'
 
 export interface IState {
   movies: IMovies
