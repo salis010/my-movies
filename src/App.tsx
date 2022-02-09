@@ -11,8 +11,8 @@ export const App: FunctionComponent = () => {
   })
 
   return (
-    <div className='flex flex-col'>
-      <h1 className='ml-8 text-5xl font-bold text-red-300'>My Movies</h1>
+    <div className='flex flex-col mx-4 sm:mx-8'>
+      <h1 className='m-16 font-bold text-7xl text-primary-200'>My Movies</h1>
       <GenresDropdown />
     </div>
   )
