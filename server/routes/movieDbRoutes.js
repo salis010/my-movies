@@ -5,6 +5,6 @@ const getMovies = require('../controllers/getMovies')
 
 router.get('/genres', getGenres)
 
-router.get('/movies/:genre', getMovies)
+router.get('/movies/:genreId', getMovies)
 
 module.exports = router
