@@ -1,11 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { setGenre } from './setGenre'
-import { GENRES_URL } from '../../../constants'
 
 export const fetchGenres = createAsyncThunk('movies/fetchGenres', async (_, thunkApi) => {
-  const data = await (await (fetch(GENRES_URL))).json()
+  const genres = await (await (fetch('/api/genres'))).json()
 
-  await thunkApi.dispatch(setGenre(data.genres[0]))
+  await thunkApi.dispatch(setGenre(genres[1]))
 
-  return data.genres
+  return genres
 })
