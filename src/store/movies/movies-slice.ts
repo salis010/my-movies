@@ -19,18 +19,22 @@ export interface IMovies {
   genres: IGenre[]
   selectedGenre: IGenre | undefined
   movies: IMovie[]
+  searchTerm: string
 }
 
 export const moviesInitialState: IMovies = {
   genres: [],
   selectedGenre: undefined,
-  movies: []
+  movies: [],
+  searchTerm: ''
 }
 
 export const moviesSlice = createSlice({
   name: 'movies',
   initialState: moviesInitialState,
-  reducers: {},
+  reducers: {
+    setSearchTerm: (state, action: PayloadAction<string>) => { state.searchTerm = action.payload }
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchGenres.fulfilled, (state, action: PayloadAction<IGenre[]>) => {
@@ -44,5 +48,9 @@ export const moviesSlice = createSlice({
       })
   }
 })
+
+export const {
+  setSearchTerm
+} = moviesSlice.actions
 
 export const movies = moviesSlice.reducer
