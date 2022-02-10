@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { IMovie } from '../movies-slice'
 
-export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (genre: string): Promise<IMovie[]> => {
-  const data = await (await (fetch(`/api/movies/${genre}`))).json()
+export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (genreId: number): Promise<IMovie[]> => {
+  const data = await (await (fetch(`/api/movies/${genreId}`))).json()
 
   const prunedData = data.map(movie => ({
     id: movie.id,

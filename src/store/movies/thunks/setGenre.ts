@@ -3,7 +3,7 @@ import { fetchMovies } from './fetchMovies'
 import { IGenre } from '../movies-slice'
 
 export const setGenre = createAsyncThunk('movies/setGenre', async (genre: IGenre, thunkApi) => {
-  await thunkApi.dispatch(fetchMovies(genre.name))
+  await thunkApi.dispatch(fetchMovies(genre.id))
 
   return genre
 })
