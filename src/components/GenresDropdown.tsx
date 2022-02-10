@@ -20,7 +20,7 @@ export const GenresDropdown: FunctionComponent = () => {
       onChange={changeHandler}
       value={selectedGenre === undefined ? 0 : selectedGenre.id}
     >
-      {genres.map(genre => <option key={genre.id} value={genre.id}>{genre.name}</option>)}
+      {genres?.map(genre => <option key={genre.id} value={genre.id}>{genre.name}</option>)}
     </select>
   )
 }
