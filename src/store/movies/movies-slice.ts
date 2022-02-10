@@ -20,16 +20,18 @@ export interface IMovies {
   genres: IGenre[]
   selectedGenre: IGenre | undefined
   movies: IMovie[]
-  searchMovies: IMovie[]
   searchTerm: string
+  searchedMovies: IMovie[]
+  isDisplaySearchedMovies: boolean
 }
 
 export const moviesInitialState: IMovies = {
   genres: [],
   selectedGenre: undefined,
   movies: [],
-  searchMovies: [],
-  searchTerm: ''
+  searchedMovies: [],
+  searchTerm: '',
+  isDisplaySearchedMovies: false
 }
 
 export const moviesSlice = createSlice({
@@ -45,12 +47,16 @@ export const moviesSlice = createSlice({
       })
       .addCase(setGenre.fulfilled, (state, action: PayloadAction<IGenre>) => {
         state.selectedGenre = action.payload
+        state.isDisplaySearchedMovies = false
+        state.searchTerm = ''
       })
       .addCase(fetchMovies.fulfilled, (state, action: PayloadAction<IMovie[]>) => {
         state.movies = action.payload
       })
       .addCase(searchMovies.fulfilled, (state, action: PayloadAction<IMovie[]>) => {
-        state.searchMovies = action.payload
+        state.searchedMovies = action.payload
+        state.isDisplaySearchedMovies = true
+        state.searchTerm = ''
       })
   }
 })

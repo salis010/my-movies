@@ -5,14 +5,20 @@ import { IState } from '../store'
 import { IMovie } from '../store/movies/movies-slice'
 
 export const MoviesGrid: FunctionComponent = () => {
-  const { movies } = useSelector((state: IState) => state.movies)
+  const { isDisplaySearchedMovies, movies, searchedMovies } = useSelector((state: IState) => state.movies)
 
   return (
     <>
       {movies.length > 0 &&
         <div className='flex flex-wrap mt-24'>
-          {movies.map((movie: IMovie) => <MovieCard key={movie.id} {...movie} />)}
+          {!isDisplaySearchedMovies && movies.map((movie: IMovie) => <MovieCard key={movie.id} {...movie} />)}
+          {isDisplaySearchedMovies && searchedMovies.map((movie: IMovie) => <MovieCard key={movie.id} {...movie} />)}
+          {isDisplaySearchedMovies && searchedMovies.length === 0 &&
+            <p className='text-5xl font-bold text-secondary-50'>
+              No matching movies found
+            </p>}
         </div>}
+
     </>
   )
 }
