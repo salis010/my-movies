@@ -1,11 +1,24 @@
 const express = require('express')
 const path = require('path')
-const router = require('./routes/movieDbRoutes')
+const bodyParser = require('body-parser')
+const db = require('./db/mongoose')
+const movieDbRouter = require('./routes/movieDbRoutes')
+const favouritesRouter = require('./routes/favouriteRoutes')
 
 const app = express()
 const port = 4000
 
-app.use('/api', router)
+app.use(bodyParser.json())
+
+db.once('open', () => {
+  console.log('Successfully connected to Mongo database "movies"')
+})
+
+db.on('error', err => console.error.bind(console, 'MongoDB connection error:', err))
+
+app.use('/api', movieDbRouter)
+
+app.use('/favourite-movies', favouritesRouter)
 
 app.use(express.static(path.join(__dirname, '../dist')))
 
