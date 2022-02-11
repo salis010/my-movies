@@ -3,7 +3,6 @@ const FavouriteMovie = require('../../db/models')
 const getFavouriteMovies = (req, res) => {
   FavouriteMovie.find({})
     .then((allMovies) => {
-      console.log(allMovies)
       res
         .status(201)
         .json(allMovies)

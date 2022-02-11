@@ -6,13 +6,13 @@ import { favourites, favouritesInitialState, IFavourites } from './favourites/fa
 export interface IState {
   ui: IUI
   movies: IMovies
-  favouriteMovies: IFavourites
+  favourites: IFavourites
 }
 
 const initialState: IState = {
   ui: uiInitialState,
   movies: moviesInitialState,
-  favouriteMovies: favouritesInitialState
+  favourites: favouritesInitialState
 }
 
 const reducer = {
