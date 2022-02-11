@@ -8,6 +8,6 @@ router.get('/get-favourite-movies', getFavouriteMovies)
 
 router.post('/save-favourite-movie', saveFavouriteMovie)
 
-// router.delete('/delete-favourite-movie', deleteFavouriteMovie)
+// router.delete('/remove-favourite-movie', deleteFavouriteMovie)
 
 module.exports = router
