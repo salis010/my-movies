@@ -5,12 +5,14 @@ import { Home } from './components/pages/Home'
 import { Favourites } from './components/pages/Favourites'
 import { useDispatch } from 'react-redux'
 import { fetchGenres } from './store/movies/thunks/fetchGenres'
+import { fetchFavourites } from './store/favourites/thunks/fetchFavourites'
 
 export const App: FunctionComponent = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchGenres())
+    dispatch(fetchFavourites())
   })
 
   return (
