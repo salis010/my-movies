@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { GenresDropdown } from '../GenresDropdown'
-import { Search } from '../search'
+import { Search } from '../Search'
 import { MoviesGrid } from '../MoviesGrid'
 
 export const Home: FunctionComponent = () =>
