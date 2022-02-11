@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { IFavouriteMovie } from '../favourites-slice'
 
-export const deleteFavourite = createAsyncThunk('favourites/deleteFavourite', async (id): Promise<IFavouriteMovie[]> => {
+export const deleteFavourite = createAsyncThunk('favourites/deleteFavourite', async (id: number): Promise<IFavouriteMovie[]> => {
   const options = {
     method: 'DELETE',
     headers: {

@@ -4,7 +4,7 @@ import { HeartIcon } from '../images/HeartIcon'
 import { saveFavourite } from '../store/favourites/thunks/saveFavourite'
 import { deleteFavourite } from '../store/favourites/thunks/deleteFavourite'
 import { IState } from '../store'
-import { IFavouriteMovie } from '../store/favourites'
+import { IFavouriteMovie } from '../store/favourites/favourites-slice'
 
 interface IMovieCard {
   id: number
