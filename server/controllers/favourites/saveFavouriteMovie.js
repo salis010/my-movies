@@ -9,13 +9,11 @@ const saveFavouriteMovie = (req, res) => {
       .status(400)
       .json({ error: 'No movie was provided' })
   } else {
-    const movie = new FavouriteMovie(body)
+    const newMovie = new FavouriteMovie(body)
 
-    if (!movie) {
+    if (!newMovie) {
       res.status(400).json({ error: 'Failed to create FavouriteMovie instance' })
     } else {
-      const newMovie = new FavouriteMovie(body)
-
       newMovie.save()
         .then(() => {
           getFavouriteMovies(req, res)

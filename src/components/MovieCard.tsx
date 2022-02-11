@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HeartIcon } from '../images/HeartIcon'
 import { saveFavourite } from '../store/favourites/thunks/saveFavourite'
+import { deleteFavourite } from '../store/favourites/thunks/deleteFavourite'
 import { IState } from '../store'
 import { IFavouriteMovie } from '../store/favourites'
 
@@ -17,17 +18,13 @@ export const MovieCard: FunctionComponent<IMovieCard> = ({ title, posterPath, id
   const { favouriteMovies } = useSelector((state: IState) => state.favourites)
   const dispatch = useDispatch()
 
-  if (!Array.isArray(favouriteMovies)) {
-    console.log('Here:', favouriteMovies)
-  }
-
   const isNotFavourite = favouriteMovies.find((movie: IFavouriteMovie) => movie.id === id) === undefined
 
   const clickHandler = (): void => {
     if (isNotFavourite) {
       dispatch(saveFavourite({ id, title, posterPath }))
     } else {
-      // remove movie from favourites
+      dispatch(deleteFavourite(id))
     }
   }
 

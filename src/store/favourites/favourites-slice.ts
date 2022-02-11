@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { fetchFavourites } from './thunks/fetchFavourites'
 import { saveFavourite } from './thunks/saveFavourite'
+import { deleteFavourite } from './thunks/deleteFavourite'
 
 export interface IFavouriteMovie {
   id: number
@@ -27,6 +28,9 @@ export const favouritesSlice = createSlice({
         state.favouriteMovies = action.payload
       })
       .addCase(saveFavourite.fulfilled, (state, action: PayloadAction<IFavouriteMovie[]>) => {
+        state.favouriteMovies = action.payload
+      })
+      .addCase(deleteFavourite.fulfilled, (state, action: PayloadAction<IFavouriteMovie[]>) => {
         state.favouriteMovies = action.payload
       })
   }
