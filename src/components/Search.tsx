@@ -1,9 +1,9 @@
 import React, { FunctionComponent, ChangeEvent, FormEvent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { SearchIcon } from './SearchIcon'
-import { setSearchTerm } from '../../store/movies/movies-slice'
-import { searchMovies } from '../../store/movies/thunks/searchMovies'
-import { IState } from '../../store'
+import { SearchIcon } from '../images/SearchIcon'
+import { setSearchTerm } from '../store/movies/movies-slice'
+import { searchMovies } from '../store/movies/thunks/searchMovies'
+import { IState } from '../store'
 
 export const Search: FunctionComponent = () => {
   const { searchTerm } = useSelector((state: IState) => state.movies)

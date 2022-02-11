@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import { HeartIcon } from '../images/HeartIcon'
 
 interface IMovieCard {
   title: string
@@ -14,8 +15,11 @@ export const MovieCard: FunctionComponent<IMovieCard> = ({ title, posterPath }) 
         src={`${IMAGE_BASE_URL}${posterPath}`}
         alt={title}
       />
-      <div className='flex'>
+      <div className='flex justify-between'>
         <p className='mt-2 text-3xl'>{title}</p>
+        <div className='mt-2 cursor-pointer'>
+          <HeartIcon disabled />
+        </div>
       </div>
     </div>
   )
