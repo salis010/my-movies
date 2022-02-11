@@ -18,7 +18,7 @@ db.on('error', err => console.error.bind(console, 'MongoDB connection error:', e
 
 app.use('/api', movieDbRouter)
 
-app.use('/favourite-movies', favouritesRouter)
+app.use('/database', favouritesRouter)
 
 app.use(express.static(path.join(__dirname, '../dist')))
 
