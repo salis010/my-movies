@@ -22,7 +22,3 @@ extraReducers: builder => {
           // activate error notification here
         })
 ```
-
-### Common Components
-
-'MoviesGrid.tsx' and 'FavouritesGrid.tsx' could be replaced by a single component.

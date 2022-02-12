@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { GenresDropdown } from '../GenresDropdown'
 import { Search } from '../Search'
-import { MoviesGrid } from '../MoviesGrid'
+import { Movies } from '../Movies'
 
 export const Home: FunctionComponent = () =>
   <>
@@ -9,5 +9,5 @@ export const Home: FunctionComponent = () =>
       <GenresDropdown />
       <Search />
     </div>
-    <MoviesGrid />
+    <Movies />
   </>
