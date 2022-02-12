@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { useSelector } from 'react-redux'
+import { Grid } from './Grid'
 import { MovieCard } from './MovieCard'
 import { IState } from '../store'
 import { IFavouriteMovie } from '../store/favourites/favourites-slice'
@@ -10,11 +11,11 @@ export const FavouritesGrid: FunctionComponent = () => {
   return (
     <>
       {favouriteMovies.length > 0 &&
-        <div className='flex flex-wrap mt-24'>
+        <Grid>
           {favouriteMovies.map((movie: IFavouriteMovie) => <MovieCard key={movie.id} {...movie} />)}
-        </div>}
+        </Grid>}
       {favouriteMovies.length === 0 &&
-        <p className='text-5xl font-bold text-secondary-50'>
+        <p className='text-3xl font-bold md:text-5xl text-secondary-50'>
           You have no favourite movies yet
         </p>}
     </>

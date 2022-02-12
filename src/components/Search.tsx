@@ -23,7 +23,7 @@ export const Search: FunctionComponent = () => {
   }
 
   return (
-    <div className='flex items-center justify-between px-4 border w-96 border-secondary-50'>
+    <div className='flex items-center justify-between w-full h-16 px-4 mt-12 border sm:mt-0 sm:w-96 border-secondary-50'>
       <form onSubmit={searchSubmitHandler}>
         <input
           className='text-3xl w-72 border-primary-400 outline-0 bg-secondary-900 text-secondary-50'
