@@ -6,7 +6,7 @@ export const Grid: FunctionComponent = ({ children }) => {
   const yGapStyling = 'gap-y-12'
 
   return (
-    <div className={`grid mt-12 ${columnsStyling} ${xGapStyling} ${yGapStyling}`}>
+    <div className={`grid ${columnsStyling} ${xGapStyling} ${yGapStyling}`}>
       {children}
     </div>
   )

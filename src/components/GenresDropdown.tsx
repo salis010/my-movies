@@ -16,7 +16,7 @@ export const GenresDropdown: FunctionComponent = () => {
 
   return (
     <select
-      className='p-2 text-3xl border-2 w-96 bg-secondary-900 border-secondary-50 text-secondary-50'
+      className='w-full h-16 p-2 text-3xl border-2 sm:w-96 bg-secondary-900 border-secondary-50 text-secondary-50'
       onChange={changeHandler}
       value={selectedGenre === undefined ? 0 : selectedGenre.id}
     >

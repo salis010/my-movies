@@ -11,7 +11,7 @@ export const Menu: FunctionComponent = () => {
   })
 
   return (
-    <nav className='flex mb-12'>
+    <nav className='flex mb-16'>
       <MenuItem text='Home' to='/' />
       <MenuItem text='Favourites' to='/favourites' />
     </nav>
