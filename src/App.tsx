@@ -17,7 +17,7 @@ export const App: FunctionComponent = () => {
 
   return (
     <Router>
-      <div className='flex flex-col items-center mx-4 sm:mx-8'>
+      <div className='flex flex-col items-center mx-8 sm:mx-12 md:mx-12 xl:mx-16'>
         <h1 className='my-12 font-bold text-7xl text-primary-200'>My Movies</h1>
         <Menu />
         <Routes>

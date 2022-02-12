@@ -14,7 +14,7 @@ export const FavouritesGrid: FunctionComponent = () => {
           {favouriteMovies.map((movie: IFavouriteMovie) => <MovieCard key={movie.id} {...movie} />)}
         </div>}
       {favouriteMovies.length === 0 &&
-        <p className='text-5xl font-bold text-secondary-50'>
+        <p className='text-3xl font-bold md:text-5xl text-secondary-50'>
           You have no favourite movies yet
         </p>}
     </>
